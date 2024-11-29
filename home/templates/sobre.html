@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <title>Sobre</title>
-</head>
-<body>
-    <nav>
-        <a href="{% url 'home' %}">Home</a> |
-        <a href="{% url 'sobre' %}">Sobre</a> |
-        <a href="{% url 'contato' %}">Contato</a>
-    </nav>
-    <h1>Sobre</h1>
-   
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block titulo %}
+    Sobre
+{% endblock %}
+
+{% block cards %}    {% endblock %}
+
+{% block titulo_page %} Conheça a gente {% endblock %}
+
+{% block conteudo %}
+    Este é o nosso site!
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block titulo %} Produtos {% endblock %}
+
+{% block cards %}    {% endblock %}#3
+
+{% block titulo_page %} Listagem de Produtos {% endblock %}
+
+{% block conteudo %}
+
+    <a href="{% url 'form_produto' %}" class="btn btn-primary">Cadastrar novo produto</a>
+    <hr>
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Valor (R$)</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in lista %}
+            <tr>
+                <td> {{item.id}}</td>
+                <td> {{item.nome}}</td>
+                <td>{{item.preco}}</td>
+                <td><a href="{% url 'detalhes_produto' item.id %}" class=" btn btn-info">Detalhes</a>
+                    <a href="{% url 'editar_produto' item.id %}" class=" btn btn-warning">Editar</a>                    
+                    <a href="{% url 'excluir_produto' item.id %}" class=" btn btn-danger">Excluir</a>
+            </tr>
+            {% endfor %}
+          
+        </tbody>
+    </table>
+
+
+
+
+{% endblock %}
